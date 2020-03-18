@@ -229,6 +229,9 @@ class Pad {
 	var prevButtons : Array<Bool> = [];
 	var rawXAxis : Float = 0.;
 	var rawYAxis : Float = 0.;
+	
+	public function getInputName (input:Int) :String return Pad.CONFIG_SDL.names[input];
+    	public function getInputStatus (input:Int) :Float return this.values[input];
 
 	function get_xAxis() {
 		if( rawXAxis*rawXAxis + rawYAxis*rawYAxis < axisDeadZone*axisDeadZone ) return 0.;
